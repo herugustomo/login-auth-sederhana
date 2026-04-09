@@ -24,14 +24,14 @@ Project ini adalah aplikasi login sederhana berbasis **React** di frontend dan *
 
 ---
 
-#### Fitur
+## Fitur
 - Login / Logout dengan JWT + cookie
 - Halaman Dashboard hanya bisa diakses jika login
 - Validasi form login (email/username & password)
 - Toggle mode Dark / Light
 - Responsive UI (mobile & desktop)
 
-##### Cara Menjalankan Project
+## Cara Menjalankan Project
 
 1. Clone repo
 git clone
