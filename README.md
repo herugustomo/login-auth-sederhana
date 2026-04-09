@@ -79,7 +79,7 @@ server akan berjalan di http://localhost:5173
 - Logout untuk menghapus sesi
 
 ## Arsitektur Aplikasi
-Frontend: Menyediakan UI, mengirim request login/logout ke backend
-Backend: Memproses request, validasi password (bcrypt), generate JWT, set cookie
-JWT + Cookie: Menyimpan sesi login, digunakan untuk akses dashboard
-MySQL: Menyimpan data user
+- Frontend: Menyediakan UI, mengirim request login/logout ke backend
+- Backend: Memproses request, validasi password (bcrypt), generate JWT, set cookie
+- JWT + Cookie: Menyimpan sesi login, digunakan untuk akses dashboard
+- MySQL: Menyimpan data user
