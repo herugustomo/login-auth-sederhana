@@ -1,16 +1,85 @@
-# React + Vite
+# Login Auth Sederhana
+Project ini adalah aplikasi login sederhana berbasis **React** di frontend dan **Express + MySQL** di backend, menggunakan **JWT** untuk autentikasi dan **cookies** untuk sesi login.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 💻 Tech Stack
 
-Currently, two official plugins are available:
+### Frontend
+- React.js (Vite)
+- React Router DOM
+- Tailwind CSS
+- Axios
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Backend
+- Node.js
+- Express.js
+- MySQL (mysql2)
+- bcrypt (untuk hashing password)
+- jsonwebtoken (JWT)
+- cookie-parser
+- cors
 
-## React Compiler
+### Tools / Lainnya
+- XAMPP / MySQL lokal (untuk development)
+- Nodemon (hot-reload backend)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+#### Fitur
+- Login / Logout dengan JWT + cookie
+- Halaman Dashboard hanya bisa diakses jika login
+- Validasi form login (email/username & password)
+- Toggle mode Dark / Light
+- Responsive UI (mobile & desktop)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##### Cara Menjalankan Project
+
+1. Clone repo
+git clone
+https://github.com/herugustomo/login-auth-sederhana.git
+cd login-auth-sederhana
+
+2. Install dependencies
+- Frontend
+npm install
+- Backend
+cd backend
+npm install
+
+3. Setup database MySQL
+- Jalankan MySQL lokal (XAMPP/WAMP)
+- Buat database login_sederhana
+- Update file backend/.env
+  PORT=5000
+  DB_HOST=localhost
+  DB_USER=root
+  DB_PASSWORD=
+  DB_NAME=login_sederhana
+  JWT_SECRET=rahasia_login_123
+- Pastikan tabel users sudah dibuat, misal:
+  CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL
+  );
+
+4. Jalankan backend
+cd backend
+npm run dev   # atau nodemon server.js
+server akan berjalan di http://localhost:5000
+
+5. Jalankan frontend
+npm run dev
+server akan berjalan di http://localhost:5173
+
+6. Testing
+- Buka http://localhost:5173/login
+- Login dengan user yang ada di database
+- Jika berhasil, redirect ke Dashboard
+- Logout untuk menghapus sesi
+
+## Arsitektur Aplikasi
+Frontend: Menyediakan UI, mengirim request login/logout ke backend
+Backend: Memproses request, validasi password (bcrypt), generate JWT, set cookie
+JWT + Cookie: Menyimpan sesi login, digunakan untuk akses dashboard
+MySQL: Menyimpan data user
