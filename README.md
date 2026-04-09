@@ -1,6 +1,11 @@
 # Login Auth Sederhana
 Project ini adalah aplikasi login sederhana berbasis **React** di frontend dan **Express + MySQL** di backend, menggunakan **JWT** untuk autentikasi dan **cookies** untuk sesi login.
 
+![Halaman Login Light](public/screenshot1.png)
+![Halaman Login Dark](public/screenshot2.png)
+![Halaman Login Mobile](public/screenshot3.png)
+![Halaman Dashboard](public/screenshot4.png)
+
 ## 💻 Tech Stack
 
 ### Frontend
