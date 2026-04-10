@@ -51,22 +51,30 @@ cd backend
 npm install
 
 3. Setup database MySQL
-- Jalankan MySQL lokal (XAMPP/WAMP)
-- Buat database login_sederhana
-- Update file backend/.env
-  PORT=5000
-  DB_HOST=localhost
-  DB_USER=root
-  DB_PASSWORD=
-  DB_NAME=login_sederhana
-  JWT_SECRET=rahasia_login_123
-- Pastikan tabel users sudah dibuat, misal:
-  CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    password VARCHAR(255) NOT NULL
-  );
+  
+  Import Database (BARU)
+
+  Project ini sudah disediakan file database agar tidak perlu membuat tabel manual.
+
+Langkah import:
+- Buka phpMyAdmin
+- Buat database baru: login_sederhana
+- Pilih database login_sederhana
+- Klik tab Import
+- Upload file berikut:
+  /database/login_sederhana.sql
+  Klik Go
+
+  
+Konfigurasi Backend (.env)
+
+  Buat / edit file backend/.env:
+  - PORT=5000
+  - DB_HOST=localhost
+  - DB_USER=root
+  - DB_PASSWORD=
+  - DB_NAME=login_sederhana
+  - JWT_SECRET=rahasia_login_123
 
 4. Jalankan backend
 cd backend
