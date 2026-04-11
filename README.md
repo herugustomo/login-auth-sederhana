@@ -91,6 +91,10 @@ server akan berjalan di http://localhost:5173
 - Jika berhasil, redirect ke Dashboard
 - Logout untuk menghapus sesi
 
+### email/username & password untuk login:
+- heru@gmail.com/admin
+- admin1234
+
 ## Arsitektur Aplikasi
 - Frontend: Menyediakan UI, mengirim request login/logout ke backend
 - Backend: Memproses request, validasi password (bcrypt), generate JWT, set cookie
